@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachhaltigkeit im Verkehr</title>
+
+    <link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="favicon.png" type="image/png" />
+	
+</head>
+<body>
+    <header>
+        <h1>Kontaktdaten</h1>
+		 <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="fakten.html">Fakten</a></li>
+                <li><a href="alltag.html">Alltag</a></li>
+                <li><a href="kontakt.html">Kontaktformular</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+
+        <main>
+            <section>
+                <h2>Kontaktformular</h2>
+                <p><p>
+				
+
+    <main>
+        <h2>Schreiben Sie uns eine Nachricht</h2>
+
+        <!-- Link zurück zur Startseite -->
+         <form class="grid" onsubmit="sendeEmail(); return false;">
+          <input type="text" id="firstname" name="firstname" placeholder="Dein Name" aria-label="Name" required />
+          <input type="email" id="email" name="email" placeholder="Deine E-Mail" aria-label="Email" required />
+          <input type="text" id="betreff" name="betreff" placeholder="Betreff" aria-label="Betreff" required />
+          <textarea id="nachricht" name="nachricht" placeholder="Deine Nachricht" aria-label="Nachricht" required></textarea>
+          <button type="submit">E-Mail schreiben</button>
+        </form>
+		
+		
+		<a href="Index.html">Zurück zur Startseite</a>
+    </main>
+				
+				
+			
+				
+		
+				
+				
+				
+				
+                
+                
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Sophia Beermann | © 2025</p>
+		
+		<section id="impressum">
+		<h3>Impressum</h3>
+		<p><strong>Betreiberin der Website:</strong></p>
+		<p>Sophia Beermann<br>
+		Taubhausstraße 26<br>
+		56112 Lahnstein<br>
+		Deutschland</p>
+		
+		<p><strong>Kontakt:</strong></p>
+		<p>Telefon: 01234 567890<br>
+		E-Mail: <a href="mailto:sophia@beermann.de">sophia@beermann.de</a></p>
+		<p><strong>Verantwortlich für den Inhalt:</strong></p>
+		<p>Sophia Beermann</p>
+		<p><strong>Umsatzsteuer-ID:</strong></p>
+		<p>DE123456789</p>
+		</section>
+		
+		</div>
+    </footer>
+	<script>
+    function sendeEmail() {
+      const name = document.getElementById("firstname").value;
+      const email = document.getElementById("email").value;
+      const betreff = document.getElementById("betreff").value;
+      const nachricht = document.getElementById("nachricht").value;
+
+      const bodyText =
+        "Name: " + name + "\n\n" +
+        "E-Mail: " + email + "\n\n" +
+        "Nachricht:\n" + nachricht;
+
+      const mailto = `mailto:sop.bee@icloud.com?subject=${encodeURIComponent(betreff)}&body=${encodeURIComponent(bodyText)}`;
+      window.location.href = mailto;
+    }
+	</script>
+
+</body>
+</html>

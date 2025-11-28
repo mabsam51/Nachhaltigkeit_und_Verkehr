@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachhaltigkeit im Verkehr</title>
+    <link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="favicon.png" type="image/png" />
+</head>
+<body>
+    <header>
+        <h1> Allgemeine Fakten über Nachhaltigkeit</h1>
+		 <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="fakten.html">Fakten</a></li>
+                <li><a href="alltag.html">Alltag</a></li>
+                <li><a href="kontakt.html">Kontaktformular</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+
+        <main>
+            <section>
+                <h2>Fakten</h2>
+				<img src="IMG_4341.jpeg" alt="Ein Bild"
+				style="display:block; margin:0 auto; width: 80%;">
+				<h4> Allgemeine Fakten über Nachhaltigkeit </h4>
+				<ul>
+				- Nachhaltigkeit bedeutet, natürliche Ressourcen so zu nutzen, dass sie auch für zukünftige Generationen erhalten bleiben.
+				<p>
+				- Sie umfasst ökologische, ökonomische und soziale Aspekte – also Umweltschutz, Wirtschaftlichkeit und gesellschaftliche Verantwortung.
+				<p>
+				- Klimaschutz, Ressourcenschonung, Abfallvermeidung und der Einsatz erneuerbarer Energien sind zentrale Elemente nachhaltigen Handelns.
+				<p>
+				- Nachhaltiges Handeln betrifft sowohl den Einzelnen als auch Unternehmen, Städte und Regierungen.
+				</ul>
+				
+				
+				
+				
+                <h4>Allgemeine Fakten über Nachhaltigkeit im Straßenverkehr:</h4>
+				<ul>
+				- Der Straßenverkehr ist einer der größten Verursacher von CO₂-Emissionen weltweit.
+				<p>
+				- In Deutschland stammen rund 20 % der gesamten Treibhausgasemissionen aus dem Verkehr.
+				<p>
+				- Der Großteil dieser Emissionen wird durch Pkw verursacht.
+				<p>
+				- Nachhaltiger Verkehr bedeutet, Ressourcen zu schonen, die Umwelt zu schützen und Energie effizient zu nutzen. 
+				<p>
+				- Öffentliche Verkehrsmittel verursachen pro Person deutlich weniger Emissionen als Individualverkehr mit dem Auto.
+				</ul>
+			
+			 <hr>
+
+		
+				
+				
+				
+				
+                
+              
+            </section>
+			
+			<section id="rechner">
+				<h3>CO₂-Rechner für deinen Schulweg</h3>
+					<p>Berechne, wie viel CO₂ du pro Woche auf deinem Schulweg verursachst – je nach Verkehrsmittel.</p>
+						<form onsubmit="event.preventDefault(); berechneCO2();">
+						<input type="number" id="km" placeholder="Strecke in km (einfach)" required />
+						<select id="verkehrsmittel">
+							<option value="auto_benzin">Auto (Benzin)</option>
+							<option value="auto_diesel">Auto (Diesel)</option>
+							<option value="bus">Bus</option>
+							<option value="zug">Zug</option>
+							<option value="motorrad">Motorrad</option>
+							<option value="motorroller">Motorroller</option>
+							<option value="ebike">E-Bike</option>
+							<option value="eroller">E-Roller</option>
+							<option value="fahrrad">Fahrrad</option>
+						</select>
+							<button type="submit">CO₂ berechnen</button>
+						</form>
+						<p class="result" id="co2Ergebnis"></p>
+							<small>
+							Quelle: 
+							<a href="https://www.umweltbundesamt.de/themen/verkehr-laerm/emissionen-des-verkehrs/treibhausgas-emissionen-des-verkehrs" 
+								   target="_blank">Umweltbundesamt (UBA), 2023</a>
+						  </small>
+				</section>
+
+			
+        </main>
+    </div>
+
+    <footer>
+        <p>Sophia Beermann | © 2025</p>
+    </footer>
+
+ <script>
+    function berechneCO2() {
+      const km = parseFloat(document.getElementById("km").value);
+      const mittel = document.getElementById("verkehrsmittel").value;
+      let emission;
+
+      switch (mittel) {
+        case "auto_benzin": emission = km * 2 * 0.192; break;
+        case "auto_diesel": emission = km * 2 * 0.171; break;
+        case "bus": emission = km * 2 * 0.105; break;
+        case "zug": emission = km * 2 * 0.041; break;
+        case "motorrad": emission = km * 2 * 0.103; break;
+        case "motorroller": emission = km * 2 * 0.075; break;
+        case "ebike": emission = km * 2 * 0.012; break;
+        case "eroller": emission = km * 2 * 0.020; break;
+        case "fahrrad": emission = 0; break;
+        default: emission = 0;
+      }
+
+      const ergebnis = document.getElementById("co2Ergebnis");
+      ergebnis.textContent = "Dein CO₂-Ausstoß pro Woche auf dem Schulweg beträgt ca. " + emission.toFixed(2) + " kg.";
+    }
+
+   
+  </script>
+
+</body>
+</html>
